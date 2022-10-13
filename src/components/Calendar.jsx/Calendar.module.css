@@ -1,0 +1,32 @@
+.calendar {
+    grid-area: cl;
+    background-color: rgba(153, 120, 71, 0.864);
+    border-radius: 10px;
+    border: solid 5px rgb(110, 68, 68);
+    font-family: cursive;
+    text-align: center;
+    padding-top: 10%;
+}
+
+.calendar table {
+    border: 1px snow solid;
+    margin: auto;
+    width: 500px;
+    height: 400px;
+}
+
+.calendar td {
+    background-color: rgba(255, 217, 142, 0.804);
+}
+
+.calendar td.highlightCell {
+    background-color: blue;
+}
+
+.calendar button {
+    margin: 10px;
+}
+
+.caption {
+    font-size: 25px;
+}

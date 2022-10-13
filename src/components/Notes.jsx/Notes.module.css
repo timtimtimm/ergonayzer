@@ -1,0 +1,41 @@
+.notes {
+  grid-area: nt;
+  background-color: rgba(255, 217, 142, 0.804);
+  border-radius: 10px;
+  border: solid 5px rgb(110, 68, 68);
+  text-align: center;
+  font-family: cursive;
+}
+
+.redactor {
+  gap: 0.5rem;
+}
+
+.redactor input {
+  margin: 10px;
+  width: 400px;
+}
+
+.item span {
+  padding: 5px;
+
+}
+
+.delete {
+  color: red;
+  cursor: pointer;
+}
+
+.item {
+  font-size: 25px;
+  text-align: left;
+  margin-left: 50px;
+}
+
+.search {
+  color: red;
+}
+
+.notes ol input:checked+span {
+  text-decoration: line-through;
+}
