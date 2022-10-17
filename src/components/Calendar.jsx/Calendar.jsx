@@ -5,10 +5,12 @@ import { getCurrentDate, highlightCell } from '../store/sliceCalendar';
 import { addCurentKey } from '../store/sliceNotes';
 import { monthNames } from '../store/supportData';
 import { useEffect, useState } from 'react';
+import cn from 'classnames';
 
 const Calendar = () => {
   const dispath = useDispatch();
   let currentDate = useSelector(state => state.calendar);
+  let objNotesData = useSelector(state => state.notes.notesData);
   let [successfulInitialization, setsuccessfulInitialization] = useState(false);
 
   if (!currentDate.date.data) {
@@ -36,10 +38,12 @@ const Calendar = () => {
   for (let i = 0; i < 6; i++) {
     tr = [];
     for (let j = 0; j < 7; j++) {
+      let objKey = currentDate.date.year + '-' + currentDate.date.month + '-' + k;
+      let result = objKey in objNotesData;
       k < 1 || k > daysCount ? tr.push(<td key={k}></td>)
         : (currentDate.highlightedCell == k
-          ? tr.push(<td key={k} id={k} className={s.highlightCell} onClick={(e) => setCurrentKey(e.target.id)} >{k}</td>)
-          : tr.push(<td key={k} id={k} onClick={(e) => setCurrentKey(e.target.id)} >{k}</td>));
+          ? tr.push(<td key={k} id={k} className={cn(s.highlightCell, {[s.containsRecords] : result }) } onClick={(e) => setCurrentKey(e.target.id)} >{k}</td>)
+          : tr.push(<td key={k} id={k} className={cn( {[s.containsRecords] : result }) } onClick={(e) => setCurrentKey(e.target.id)} >{k}</td>));
       k++;
     }
     table.push(<tr>{tr}</tr>);
@@ -65,3 +69,7 @@ const Calendar = () => {
 }
 
 export default Calendar;
+
+/* return <span className={ cn({
+  [styles.selectedPage]: currentPage === p
+}, styles.pageNumber) } */
