@@ -33,8 +33,7 @@ const sliceCalendar = createSlice({
             data: ''
         },
         dayNumber: '',
-        highlightedCell: '',
-        successfulInitialization: false,
+        highlightedCell: ''
     },
 
     reducers: {

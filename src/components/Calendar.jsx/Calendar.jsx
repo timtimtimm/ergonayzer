@@ -15,7 +15,7 @@ const Calendar = () => {
 
   if (!currentDate.date.data) {
     dispath(getCurrentDate());
-    setsuccessfulInitialization(true);
+    setsuccessfulInitialization(!successfulInitialization);
   };
 
   useEffect(() => {
@@ -29,6 +29,12 @@ const Calendar = () => {
     dispath(highlightCell(id));
     dispath(addCurentKey(key));
   };
+
+  const onPrevDate = (num) => {
+    dispath(getCurrentDate(currentDate.date.year, currentDate.date.month + num));
+    setsuccessfulInitialization(!successfulInitialization);
+
+  }
 
   let table = [],
     k = (1 - currentDate.dayNumber),
@@ -53,9 +59,9 @@ const Calendar = () => {
     <div className={s.calendar}>
       <table >
         <caption className={s.caption} >
-          <button onClick={() => dispath(getCurrentDate(currentDate.date.year, currentDate.date.month - 1))}>{prev}</button>
+          <button onClick={() => onPrevDate(-1)}>{prev}</button>
           {monthNames[currentDate.date.month]} {currentDate.date.year}
-          <button onClick={() => dispath(getCurrentDate(currentDate.date.year, currentDate.date.month + 1))}>{next}</button>
+          <button onClick={() => onPrevDate(1)}>{next}</button>
         </caption>
         <thead>
           <tr> <th>пн</th> <th>вт</th> <th>ср</th> <th>чт</th> <th>пт</th> <th>сб</th> <th>вс</th></tr>
