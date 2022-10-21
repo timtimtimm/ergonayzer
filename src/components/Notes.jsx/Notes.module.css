@@ -14,6 +14,7 @@
 .redactor input {
   margin: 10px;
   width: 400px;
+  padding: 5px;
 }
 
 .item span {
@@ -23,13 +24,17 @@
 
 .delete {
   color: red;
-  cursor: pointer;
+  
 }
 
 .item {
   font-size: 25px;
   text-align: left;
   margin-left: 50px;
+}
+
+.item span {
+  cursor: pointer;
 }
 
 .search {

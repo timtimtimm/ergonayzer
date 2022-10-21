@@ -41,9 +41,9 @@ const Calendar = () => {
     daysCount = currentDate.countDays,
     tr;
 
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 6 && k <= daysCount; i++) {
     tr = [];
-    for (let j = 0; j < 7; j++) {
+    for (let j = 0; j < 7 ; j++) {
       let objKey = currentDate.date.year + '-' + currentDate.date.month + '-' + k;
       let result = objKey in objNotesData;
       k < 1 || k > daysCount ? tr.push(<td key={k}></td>)
