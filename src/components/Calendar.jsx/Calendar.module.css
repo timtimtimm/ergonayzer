@@ -31,6 +31,14 @@
     font-size: 25px;
 }
 
+.caption button {
+    cursor: pointer;
+}
+
 .containsRecords {
     border: 2px solid rgb(23, 214, 23);
+}
+
+.tableBody {
+    cursor: pointer;
 }

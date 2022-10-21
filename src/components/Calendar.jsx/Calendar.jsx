@@ -66,7 +66,7 @@ const Calendar = () => {
         <thead>
           <tr> <th>пн</th> <th>вт</th> <th>ср</th> <th>чт</th> <th>пт</th> <th>сб</th> <th>вс</th></tr>
         </thead>
-        <tbody>
+        <tbody className={s.tableBody}>
           {table}
         </tbody>
       </ table>

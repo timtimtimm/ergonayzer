@@ -17,6 +17,10 @@
   padding: 5px;
 }
 
+.redactor button {
+  cursor: pointer;
+}
+
 .item span {
   padding: 5px;
 
